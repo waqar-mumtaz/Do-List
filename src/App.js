@@ -1,7 +1,89 @@
+import React, { useState, useEffect } from 'react';
+
 import Todo from './Todo';
 
+const name = 'waqas';
 function App() {
-  return <Todo />;
+  // react states are immutable. mean hum react state (count) ko directly update nhi kr skte.
+  //agr hume state update krni hui to hum setCount se krnge.
+  // usestate returns 2 values: getter, setter
+  const [rollNumber, setRollNumber] = useState('GFC124');
+  const [day, setDay] = useState(true);
+  const [textColor, setTextColor] = useState('text-blue-600');
+  const [count, setCount] = useState(1);
+
+  const clickMe = () => {
+    setRollNumber('WAQ123');
+  };
+
+  const increment = () => {
+    if (count < 10) {
+      setCount(count + 1);
+    }
+  };
+
+  const decrement = () => {
+    if (count >= 1) {
+      setCount(count - 1);
+    }
+  };
+
+  const changeBackground = () => {
+    setTextColor('text-black-200');
+
+    // set toggle - hme day ki value ko toggle krna hai. agr true hui to false krni hai. false hui to true krni hai
+    //Option 1. not recommended. because very lengthy
+    // if (day) {
+    //   setDay(false);
+    // } else {
+    //   setDay(true);
+    // }
+
+    //Option 2. in few cases.
+    // setDay(day ? false : true);
+
+    //Option 3. smart way
+    setDay(!day);
+  };
+
+  // ? mean if
+  // : mean else
+  // aek line me if else likhne k lie hum ? : use krte hain
+  return (
+    <div
+      className={`${
+        day ? 'bg-yellow-200' : 'bg-slate-400'
+      } pt-20 pl-20 ${textColor}`}
+    >
+      <p>{name}</p>
+      <p>{rollNumber}</p>
+      <p className="text-4xl pb-3">{count}</p>
+      <button
+        className="bg-blue-600 text-white font-semibold rounded-sm py-3 px-4 hover:bg-blue-700 active:bg-blue-800"
+        onClick={changeBackground}
+      >
+        {day ? 'it is day. swith to night' : 'it is night. switch to day'}
+      </button>
+      <button
+        className="ml-3 bg-blue-600 text-white font-semibold rounded-sm py-3 px-4 hover:bg-blue-700 active:bg-blue-800"
+        onClick={clickMe}
+      >
+        Add
+      </button>
+      <button
+        className="ml-3 bg-blue-600 text-white font-semibold rounded-sm py-3 px-4 hover:bg-blue-700 active:bg-blue-800"
+        onClick={increment}
+      >
+        Increment
+      </button>
+      <button
+        className="ml-3 bg-blue-600 text-white font-semibold rounded-sm py-3 px-4 hover:bg-blue-700 active:bg-blue-800"
+        onClick={decrement}
+      >
+        Decrement
+      </button>
+    </div>
+  );
 }
 
 export default App;
