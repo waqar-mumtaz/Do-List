@@ -1,6 +1,6 @@
 function Searchbar() {
   return (
-    <div className="bg-white w-[850px] flex justify-center ">
+    <div className="flex ">
       <input
         className="w-[700px] py-3 pl-4 rounded-sm border active:border-blue-500"
         type="text"

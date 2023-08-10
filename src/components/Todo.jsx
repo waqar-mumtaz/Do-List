@@ -1,7 +1,9 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
+
 function Todo() {
   return (
-    <section className="bg-white w-[850px] flex justify-center py-8">
-      <div>
+    <section className="pt-4">
         <ul>
           <li className="flex items-center justify-between py-2">
             <div className="flex items-center gap-2">
@@ -13,7 +15,7 @@ function Todo() {
               <p>Print bills</p>
             </div>
             <div className="cursor-pointer">
-              <i className="fa-solid fa-xmark"></i>
+            <FontAwesomeIcon icon={faXmark}  size="sm"  />
             </div>
           </li>
           <hr />
@@ -88,7 +90,6 @@ function Todo() {
           </li>
           <hr />
         </ul>
-      </div>
     </section>
   );
 }
