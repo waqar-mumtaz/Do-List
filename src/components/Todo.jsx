@@ -2,22 +2,6 @@ function Todo() {
   return (
     <section className="bg-white w-[850px] flex justify-center py-8">
       <div>
-        <div className="font-bold text-base flex justify-between mb-2">
-          <h1>Awesome Todo List</h1>
-          <h2 className="cursor-pointer hover:text-blue-400 hover:underline active:text-blue-500">
-            Clear all
-          </h2>
-        </div>
-        <div>
-          <input
-            className="w-[700px] py-3 pl-4 rounded-sm border"
-            type="text"
-            placeholder="What do you need to do today?"
-          />
-          <button className="bg-blue-600 text-white font-semibold rounded-sm py-3 px-4 hover:bg-blue-700 active:bg-blue-800">
-            Add
-          </button>
-        </div>
         <ul>
           <li className="flex items-center justify-between py-2">
             <div className="flex items-center gap-2">
