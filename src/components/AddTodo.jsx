@@ -1,4 +1,4 @@
-function Searchbar() {
+function AddTodo() {
   return (
     <div className="flex ">
       <input
@@ -12,4 +12,4 @@ function Searchbar() {
     </div>
   );
 }
-export default Searchbar;
+export default AddTodo;
