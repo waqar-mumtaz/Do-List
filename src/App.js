@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AddTodo from './components/AddTodo';
 import Navbar from './components/Navbar';
 import SearchTodo from './components/SearchTodo';
 import Todo from './components/Todo';
@@ -27,6 +28,9 @@ function App() {
               setTodos(value);
             }}
           />
+        </div>
+        <div className="mt-4">
+          <AddTodo addNewTodo={setTodos} todos={todos} />
         </div>
         {todos.length > 0 ? (
           todos.map((item, index) => <Todo todo={item} key={index} />)
